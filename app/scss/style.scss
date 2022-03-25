@@ -4,4 +4,98 @@
 @import "libs";
 @import "global";
 
+// header
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(33, 33, 33, 0.8);
+  z-index: 9999;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+  }
+  &__contacts-location {
+    margin-right: 35px;
+    margin-left: 23px;
+  }
+  &__contacts-phone {
+    @extend %mont-500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+  }
+}
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.user-nav {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  &__link {
+    padding: 0 12px;
+  }
+}
+
+// top-slider
+
+.top-slider {
+  &__inner {
+  }
+
+  &__item {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  &__box {
+    margin-top: 70px;
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 602px;
+    margin-bottom: 24px;
+    @extend %jura-400;
+    font-size: 41px;
+    line-height: 48px;
+    color: #fff;
+  }
+
+  &__subtitle {
+    margin-bottom: 55px;
+    width: 100%;
+    max-width: 447px;
+    @extend %mont-400;
+    font-size: 19px;
+    line-height: 23px;
+
+    color: #fff;
+  }
+
+  &__link {
+    min-width: 165px;
+    padding: 16px 34px;
+    background-color: transparent;
+    @extend %mont-600;
+    font-size: 14px;
+    line-height: 23px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
 @import "media";
