@@ -40,6 +40,23 @@ body {
 
 // section
 
-.goods {
-  
+.section {
+  &__category {
+    padding: 60px 0 30px 0;
+  }
+  &__goods {
+    padding: 30px 0 60px;
+    border-bottom: 1px solid rgba(#fff, 0.1);
+  }
+  &__novelty {
+    padding: 30px 0 60px;
+    border-bottom: 1px solid rgba(#fff, 0.1);
+  }
+  &__info {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(#fff, 0.1);
+  }
+  &__news {
+    padding: 60px 0;
+  }
 }
