@@ -10,12 +10,18 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(33, 33, 33, 0.8);
   z-index: 9999;
+  min-height: 60px;
+  background: rgba(33, 33, 33, 0.8);
+
+  transition: all 0.3s;
+  &--scroll {
+    background: #000;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
-    padding: 18px 0;
+    align-items: center;
   }
   &__contacts {
     display: flex;
@@ -32,8 +38,20 @@
     line-height: 24px;
     color: #fff;
   }
+  &__contacts-tel {
+    display: none;
+  }
+  &__logo {
+  }
+  &__contacts-link,
+  .user-nav__link {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
 }
 .menu-btn {
+  padding-top: 18px;
+  padding-bottom: 18px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -47,7 +65,80 @@
   }
 }
 
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.5s;
+  background-color: rgba(#000, 0.6);
+  &__box {
+    height: 100vh;
+
+    max-width: 445px;
+    text-transform: uppercase;
+    background-color: #000;
+    overflow-y: scroll;
+  }
+  ul.menu__list {
+    margin-bottom: 30px;
+  }
+
+  &__list-item:hover .menu__list-link {
+    color: red;
+  }
+
+  &__list-link {
+    padding: 25px 0;
+    padding-left: 48px;
+    display: block;
+    @extend %mont-500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  &__info {
+  }
+
+  &__info-item:hover .menu__info-link {
+    color: #fff;
+  }
+
+  &__info-link {
+    display: block;
+    padding: 15px 0;
+    padding-left: 48px;
+    @extend %mont-600;
+    font-size: 15px;
+    line-height: 18px;
+    color: rgba(#fff, 0.6);
+  }
+}
+.menu--close {
+  transform: translateX(-500%);
+}
+.menu-btn {
+  &__close {
+    display: block;
+    width: 100%;
+    padding-top: 45px;
+    padding-left: 57px;
+    padding-bottom: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
 // top-slider
+.top-slider__inner {
+  overflow-x: hidden;
+}
 .top-slider {
   &__item {
     height: 100vh;
@@ -85,6 +176,7 @@
   }
 
   &__link {
+    display: inline-block;
     min-width: 165px;
     padding: 16px 34px;
     background-color: transparent;
@@ -381,6 +473,7 @@
     font-size: 27px;
     line-height: 42px;
     color: #fff;
+    text-align: center;
   }
   &__box {
     position: relative;
@@ -581,11 +674,8 @@
     max-width: 368px;
     margin-right: 77px;
   }
-
-  &__about-box {
-  }
-
   &__logo {
+    display: inline-block;
     margin-bottom: 30px;
   }
 
@@ -618,8 +708,12 @@
     display: flex;
     flex-wrap: wrap;
   }
-  &__nav-item + .footer__nav-item {
-    margin-left: 30px;
+
+  &__nav-item {
+    margin-right: 30px;
+  }
+  &__nav-item:last-child {
+    margin-right: 0;
   }
   &__nav-link {
     @extend %mont-500;
@@ -647,6 +741,7 @@
   &__social-item + .footer__social-item {
     margin-left: 8px;
   }
+
   &__social-icon {
     width: 32px;
     height: 32px;
@@ -683,6 +778,7 @@
   background-color: $default2;
   &__inner {
     display: flex;
+    flex-wrap: wrap;
   }
 }
 

@@ -4,11 +4,29 @@ body {
 }
 
 body {
+  position: relative;
+  overflow-x: hidden;
   @extend %mont-400;
   font-size: 13px;
   line-height: 20px;
   color: #fff;
   background-color: $default;
+}
+
+.body-lock{
+  overflow: hidden;
+  &::after{
+    content: 0;
+    position: absolute;
+    z-index: 6;
+    min-height: 100%;
+    min-width: 100%;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+  }
 }
 
 .wrapper {
@@ -58,5 +76,13 @@ body {
   }
   &__news {
     padding: 60px 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .section {
+    &__category {
+      padding: 30px 0 30px 0;
+    }
   }
 }
